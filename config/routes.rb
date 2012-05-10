@@ -1,4 +1,6 @@
 Scoreboard::Application.routes.draw do
+  resources :high_scores
+
   get "game/index"
   
   root :to => 'game#index'
