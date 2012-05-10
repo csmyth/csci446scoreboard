@@ -47,10 +47,11 @@ function playagain() {
 function winner() {
 	alert("You escape this time. Next time you won't be so lucky! Mwahaha!");
   	var name = prompt("So what shall the minstrels call you, hero?", "FraidyKnight");
-  	highScores.push([guessesLeft+1, name]);
-  	highScores.sort(sortfunc);
-  	$("div#highScores").text("");
-  	populateHighScores(highScores);
+  	<% winner = HighScore.new %>
+  	<% winner.name = name %>
+  	<% winner.score = guessesLeft+1 %>
+  	$('div#highScores').append("<p>" + <%= winner.name %> + " " + <%= winner.score %> + "</p>");
+  	
   	playagain();
 }
 
