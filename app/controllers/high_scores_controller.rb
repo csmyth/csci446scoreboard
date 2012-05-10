@@ -2,7 +2,7 @@ class HighScoresController < ApplicationController
   # GET /high_scores
   # GET /high_scores.json
   def index
-    @high_scores = HighScore.all
+    @high_scores = HighScore.order(:score).reverse()
 
     respond_to do |format|
       format.html # index.html.erb

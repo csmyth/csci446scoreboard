@@ -11,7 +11,11 @@
 <%= yield %>
 
 <h2><span class="highScore">High</span> Scores</h2>
-<div id="highScores"></div>
+<div id="highScores">
+  <% @high_scores.each do |highscore| %>
+    <%= highscore.name %> <%= highscore.score %> </p>
+  <% end %>
+</div>
 
 </body>
 </html>
