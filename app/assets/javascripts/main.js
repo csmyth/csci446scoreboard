@@ -3,7 +3,6 @@ var magicNumber = Math.floor((Math.random()*100)+1);
 
 $(function() {
   updateScore(guessesLeft);
-  populateHighScores();
   $("h3#feedbackHigh").hide();
   $("h3#feedbackLow").hide();
   
@@ -20,12 +19,6 @@ $(function() {
   });
 
 });
-
-function populateHighScores() {
-  <% high_scores.each do |highscore| %>
-    $('div#highScores').append("<p>" + <%= highscore.name %> + " " + <%= highscore.score %> + "</p>");
-  <% end %>
-}
 
 function updateScore(score) {
   $('h2#score span#guessesLeft').append(score);
