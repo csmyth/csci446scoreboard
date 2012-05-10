@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Guess the Number</title>
-  <%= stylesheet_link_tag "screen" %>
+  <title>Scoreboard</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
   <link href="http://fonts.googleapis.com/css?family=Nosifer" rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-  
 </head>
 <body>
 
@@ -21,5 +22,12 @@
   <input type="button" id="btnGuess" value="Guess!">
 </form>
 
-</body>  
+<h2><span class="highScore">High</span> Scores</h2>
+<div id="highScores">
+  <% @high_scores.each do |highscore| %>
+    <%= highscore.name %> <%= highscore.score %> </p>
+  <% end %>
+</div>
+
+</body>
 </html>
